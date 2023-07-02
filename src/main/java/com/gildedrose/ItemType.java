@@ -1,5 +1,8 @@
 package com.gildedrose;
 
+/**
+ * The enum Item type.
+ */
 public enum ItemType {
 
     DEFAULT("Default"),
@@ -13,6 +16,12 @@ public enum ItemType {
         this.name = name;
     }
 
+    /**
+     * Gets item type based on the initial characters of name
+     *
+     * @param name the name
+     * @return the item type from name
+     */
     public static ItemType getItemTypeFromName(String name) {
             ItemType result = ItemType.DEFAULT;
             if (name.startsWith(AGED_BRIE.name)) {

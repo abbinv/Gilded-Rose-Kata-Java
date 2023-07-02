@@ -1,12 +1,26 @@
 package com.gildedrose;
 
+/**
+ * The class Gilded rose.
+ */
 class GildedRose {
+    /**
+     * The Items.
+     */
     Item[] items;
 
+    /**
+     * Instantiates a new Gilded rose.
+     *
+     * @param items the items
+     */
     public GildedRose(Item[] items) {
         this.items = items;
     }
 
+    /**
+     * Update quality of items based on sell in days
+     */
     public void updateQuality() {
         for (Item item : items) {
             updateQuality(item, QualityCalculator.getQualityMutation(item));

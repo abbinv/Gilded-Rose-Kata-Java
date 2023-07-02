@@ -1,7 +1,16 @@
 package com.gildedrose;
 
+/**
+ * The class Quality calculator.
+ */
 class QualityCalculator {
 
+    /**
+     * Gets quality mutation based on item type and sell in days
+     *
+     * @param item the item
+     * @return the quality mutation
+     */
     public static int getQualityMutation(Item item) {
         int qualityMutation = item.sellIn <= 0 ? -2 : -1;
         ItemType itemType = ItemType.getItemTypeFromName(item.name);

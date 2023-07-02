@@ -2,14 +2,19 @@ package com.gildedrose;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The test class for GildedRose.
+ */
 class GildedRoseTest {
 
     private Item[] items;
     private GildedRose app;
 
     @Test
+    @DisplayName("Default test")
     void foo() {
         // Given
         items = new Item[]{new Item("foo", 0, 0)};
@@ -24,7 +29,8 @@ class GildedRoseTest {
         assertEquals(0, app.items[0].quality);
     }
 
-    @Test
+    @Test ()
+    @DisplayName("Verify that sell in days are updated for all items except Sulfuras")
     void sellInDays() {
         // Given
         items = new Item[]{new Item("item1", 5, 20),
@@ -43,6 +49,7 @@ class GildedRoseTest {
     }
 
     @Test
+    @DisplayName("Verify that quality is updated properly for a regular item")
     void qualityOfRegularItem() {
         // Given
         items = new Item[]{new Item("item1", 10, 20),
@@ -60,6 +67,7 @@ class GildedRoseTest {
     }
 
     @Test
+    @DisplayName("Verify that quality is updated properly for Aged Brie")
     void qualityOfAgedBrie() {
         // Given
         items = new Item[]{new Item("Aged Brie", 10, 20),
@@ -75,6 +83,7 @@ class GildedRoseTest {
     }
 
     @Test
+    @DisplayName("Verify that quality is updated properly for BackstagePasses")
     void qualityOfBackstagePasses() {
         // Given
         items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
@@ -109,6 +118,7 @@ class GildedRoseTest {
     }
 
     @Test
+    @DisplayName("Verify that quality is updated properly for Conjured items")
     void qualityOfConjured() {
         // Given
         items = new Item[]{new Item("Conjured Mana Cake", 3, 6),
